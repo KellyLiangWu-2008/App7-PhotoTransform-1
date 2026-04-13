@@ -101,22 +101,22 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          var blueCanvas = document.getElementById('blueCanvas'); 
+          var blueCanvas = document.getElementById('blueCanvas'); // Begins javascript for the second canvas
           var bluecontext = blueCanvas.getContext("2d");
 
-          drawImageIOSFix(bluecontext, img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
+          drawImageIOSFix(bluecontext, img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500); // Puts the image from the myCanvas into blueCanvas as well
           
-          var imageData = bluecontext.getImageData(0, 0, blueCanvas.width, blueCanvas.height);
+          var imageData = bluecontext.getImageData(0, 0, blueCanvas.width, blueCanvas.height); // Gets the pixel data of the image
           var data = imageData.data;
 
-          for (var i = 0; i < data.length; i += 4) {
-            data[i] = 0;
-            data[i + 1] = 0;
+          for (var i = 0; i < data.length; i += 4) { // Loops through each pixel; data[i] = Red, data[i+1] = Green, data[i+2] = Blue, and data[i+3] = Alpha
+            data[i] = 0; // Removes the red from the picture in blueCanvas
+            data[i + 1] = 0; // Removes the green from the picture in blueCanvas
           }
 
-        bluecontext.putImageData(imageData, 0, 0);
+        bluecontext.putImageData(imageData, 0, 0); // Modifies the pixels from the picture in blueCanvas
 
-        console.log("Blue filter applied!")
+        console.log("Blue filter applied!") // Debug console message
           
         } // end of img.onload
         
@@ -151,18 +151,18 @@
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
-        context.font = '20pt Calibri'; // Codes for the font and font size of the text on the myCanvas
+        context.font = '20pt Calibri'; /* Codes for the font and font size of the text on the myCanvas */
         context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20); // Puts the text on the myCanvas
+        context.fillText("Original image will go here", 10, 20); /* Puts the text on the myCanvas */
       </script>
 
-     <canvas id="blueCanvas" width=600 height=500 style="border:1px solid blue;"></canvas> // This adds the second canvas and codes for its size and border
+     <canvas id="blueCanvas" width=600 height=500 style="border:1px solid blue;"></canvas> /* This adds the second canvas and codes for its size and border */
      <script>
-       var blueCanvas = document.getElementById('blueCanvas'); // This script initiates the second canvas "blueCanvas"
+       var blueCanvas = document.getElementById('blueCanvas'); /* This script initiates the second canvas "blueCanvas" */
        var bluecontext = blueCanvas.getContext("2d"); 
-       bluecontext.font = '20pt Calibri'; // Codes for the font and font size of the text on the blueCanvas
+       bluecontext.font = '20pt Calibri'; /* Codes for the font and font size of the text on the blueCanvas */
        bluecontext.fillStyle = "blue";
-       bluecontext.fillText("Blue image will go here", 10, 20); // Puts the text on the blueCanvas
+       bluecontext.fillText("Blue image will go here", 10, 20); /* Puts the text on the blueCanvas */
      </script>
 
     </div><!-- /content -->
