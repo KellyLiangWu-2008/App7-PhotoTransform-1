@@ -101,7 +101,7 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          var blueCanvas = document.getElementById('blueCanvas');
+          var blueCanvas = document.getElementById('blueCanvas'); 
           var bluecontext = blueCanvas.getContext("2d");
 
           drawImageIOSFix(bluecontext, img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
@@ -148,21 +148,21 @@
       <div id="messageDisplayArea"></div>
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
+        context.font = '20pt Calibri'; // Codes for the font and font size of the text on the myCanvas
         context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        context.fillText("Original image will go here", 10, 20); // Puts the text on the myCanvas
       </script>
 
-     <canvas id="blueCanvas" width=600 height=500 style="border:1px solid blue;"></canvas>
+     <canvas id="blueCanvas" width=600 height=500 style="border:1px solid blue;"></canvas> // This adds the second canvas and codes for its size and border
      <script>
-       var blueCanvas = document.getElementById('blueCanvas');
-       var bluecontext = blueCanvas.getContext("2d");
-       bluecontext.font = '20pt Calibri';
+       var blueCanvas = document.getElementById('blueCanvas'); // This script initiates the second canvas "blueCanvas"
+       var bluecontext = blueCanvas.getContext("2d"); 
+       bluecontext.font = '20pt Calibri'; // Codes for the font and font size of the text on the blueCanvas
        bluecontext.fillStyle = "blue";
-       bluecontext.fillText("Blue image will go here", 10, 20);
+       bluecontext.fillText("Blue image will go here", 10, 20); // Puts the text on the blueCanvas
      </script>
 
     </div><!-- /content -->
