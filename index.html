@@ -159,8 +159,8 @@
      <canvas id="blueCanvas" width=600 height=500 style="border:1px solid blue;"></canvas>
      <script>
        var blueCanvas = document.getElementById('blueCanvas');
-       var bluecontext = blueCanvas.getcontext("2d");
-       bluecontext.font = '20 pt Calibri';
+       var bluecontext = blueCanvas.getContext("2d");
+       bluecontext.font = '20pt Calibri';
        bluecontext.fillStyle = "blue";
        bluecontext.fillText("Blue image will go here", 10, 20);
      </script>
